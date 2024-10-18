@@ -1,0 +1,10 @@
+services:
+  sigal:
+    image: jhartman/sigal
+    build: ./image
+    ports:
+      - 8080:8080
+    volumes:
+      - ./pictures:/pictures
+      - ./sigal-html:/usr/share/nginx/html
+    user: 1000:1000

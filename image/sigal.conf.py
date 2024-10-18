@@ -23,7 +23,7 @@ destination = '/usr/share/nginx/html'
 
 # Theme :
 # - colorbox (default), galleria, photoswipe, or the path to a custom theme directory
-theme = 'galleria'
+theme = 'photoswipe'
 
 # Author. Used in the footer of the pages and in the author meta tag.
 # author = ''
@@ -39,11 +39,11 @@ theme = 'galleria'
 # ----------------
 
 # Size of resized image (default: (640, 480))
-img_size = (800, 600)
+img_size = (1200, 800)
 
 # Should we use openlayers to show a map of the images where possible?
 # This option only has an effect on the galleria theme for the while.
-show_map = True
+show_map = False
 
 # Pilkit processor used to resize the image
 # (see http://pilkit.readthedocs.org/en/latest/#processors)
@@ -121,7 +121,7 @@ orig_link = True
 # path relative to the source directory:
 # http://docs.python.org/2/library/fnmatch.html
 ignore_directories = []
-ignore_files = ['*.mp4']
+ignore_files = ['*.mp4', '*.webm']
 
 # -------------
 # Video options

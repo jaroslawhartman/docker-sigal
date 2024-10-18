@@ -1,28 +1,17 @@
 # docker-sigal
 
-Docker image based on nginx-uunprivilidged official one for [sigal](http://sigal.saimon.org/en/latest/) gallery.
+Docker image based on nginx official one for [sigal](http://sigal.saimon.org/en/latest/) gallery.
 
 Run with :
-    docker compose up -d
 
     docker run -p 80:80 -v /path/to/your/pictures/:/pictures --name sigal-ct -d remche/docker-sigal
-
-You can use the following command to regenerate gallery :
-
-    docker exec sigal-ct sigal build
-
-
-Using a cron or incron to run it is a good way to keep your gallery up to date.
-
-
-# Legacy (w/o docker compose)
 
 
 Default configuration use the galleria theme, keep original and put gallery in /usr/share/nginx/html. You can use a docker volume if you want it permanent :
 
     docker run -p 80:80 -v /path/to/your/pictures/:/pictures -v sigal-html:/usr/share/nginx/html --name sigal-ct -d remche/docker-sigal
 
-
+    
 If you want to override this conf, you can use your own sigal.conf.py :
 
     docker run -p 80:80 -v /path/to/your/pictures/:/pictures -v/path/to/your/sigal.conf.py:/opt/sigal.conf.py --name sigal-ct -d remche/docker-sigal
@@ -36,3 +25,9 @@ You can set a basic authentication in htpasswd format by setting HTPASSWD env va
 You might then use SSL with [nginx-proxy](https://hub.docker.com/r/jwilder/nginx-proxy/).
 
 
+You can use the following command to regenerate gallery :
+
+    docker exec sigal-ct sigal build
+
+
+Using a cron or incron to run it is a good way to keep your gallery up to date.
